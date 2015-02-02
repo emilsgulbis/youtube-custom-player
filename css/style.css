@@ -1,0 +1,73 @@
+#video{
+	position: relative;
+	width: 620px;
+	margin:50px auto;
+}
+
+#video iframe{
+	float: left;
+}
+
+#video #progress{
+	width: 100%;
+	position: absolute;
+	left:0;
+	bottom:0;
+	height: 10px;
+	background: #6e6e6e;
+	opacity: 0;
+	visibility: hidden;
+}
+
+#video #progress div{
+	position: absolute;
+	left:0;top:0;bottom:0;
+	cursor: pointer;
+}
+
+#video #progress div.buffered{
+	background: #adadad;
+	z-index: 1;
+}
+
+#video #progress div.played{
+	background: #c32d00;
+	z-index: 2;
+}
+
+#video:hover #progress{
+	opacity: 1;
+	visibility: visible;
+}
+
+#video #overlay{
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+	top:0;left:0;right: 0;bottom:0;
+	z-index: 4;
+}
+
+#video #overlay.hide{
+	opacity: 0;
+	visibility: hidden;
+}
+
+#video #overlay #play{
+	width: 80px;height: 80px;
+	position: absolute;
+	top:50%;left:50%;
+	margin-top: -40px;
+	margin-left: -40px;
+	background: rgba(0,0,0,.5);
+	cursor: pointer;
+}
+
+#video #progress, 
+#video #progress div,
+#video #overlay{
+    transition:.2s ease all; 
+    -moz-transition:.2s ease all; 
+    -webkit-transition:.2s ease all;
+}
